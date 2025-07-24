@@ -13,25 +13,26 @@ export default function EmployeeDetailModal({ employee, onClose }) {
 
   // destructure fields
   const {
-    user: { name = '—', email = '—', gender = '—', dob } = {},
+    user: { name = '—', email = '—' } = {},
     designation = '—',
-    joinDate
+    gender = '—',
+    age: ageRaw,
+    dateOfJoining: dojRaw,
+    createdAt
   } = employee;
 
-  // format dates & compute age
-  const formattedJoin = joinDate ? new Date(joinDate).toLocaleDateString() : '—';
-  const age = dob
-    ? Math.floor((Date.now() - new Date(dob)) / (365.25 * 24 * 60 * 60 * 1000))
-    : '—';
+  // determine displayed age and join date
+  const age = ageRaw != null ? ageRaw : '—';
+  const joinValue = dojRaw || createdAt;
+  const formattedJoin = joinValue ? new Date(joinValue).toLocaleDateString() : '—';
 
   return (
     <div className="modal-overlay" onClick={onClose}>
       <div className="employee-detail-modal" onClick={e => e.stopPropagation()}>
         <button className="close-btn" onClick={onClose} aria-label="Close">×</button>
-
         <div className="modal-header">
-          <img src={photoUrl} alt={name} className="detail-photo" />
-          <div className="header-info">
+          <img src={photoUrl} alt={`${name}'s photo`} className="detail-photo" />
+          <div className="detail-info">
             <h2 className="detail-name">{name}</h2>
             <p className="detail-designation">{designation}</p>
           </div>
@@ -44,7 +45,7 @@ export default function EmployeeDetailModal({ employee, onClose }) {
           </div>
           <div className="field-row">
             <span className="field-label">Gender</span>
-            <span className="field-value">{gender}</span>
+            <span className="field-value">{gender || '—'}</span>
           </div>
           <div className="field-row">
             <span className="field-label">Age</span>
@@ -57,12 +58,8 @@ export default function EmployeeDetailModal({ employee, onClose }) {
         </div>
 
         <div className="modal-footer">
-          <button className="btn btn-secondary" onClick={onClose}>
-            Leave Calendar
-          </button>
-          <button className="btn btn-primary">
-            Show Report
-          </button>
+          <button className="btn btn-secondary" onClick={onClose}>Close</button>
+          <button className="btn btn-primary" onClick={() => /* navigate to report */ null}>Show Report</button>
         </div>
       </div>
     </div>
