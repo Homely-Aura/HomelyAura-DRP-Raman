@@ -1,35 +1,38 @@
-// src/components/EmployeeDetailModal.jsx
 import React from 'react';
 import './EmployeeDetailModal.css';
 
 export default function EmployeeDetailModal({ employee, onClose }) {
   if (!employee) return null;
 
-  // build photo URL
   const backendRoot = process.env.REACT_APP_API_URL.replace(/\/api$/, '');
   const photoUrl = employee.photo
     ? `${backendRoot}/uploads/${employee.photo}`
     : 'https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png';
 
-  // destructure fields
   const {
     user: { name = '—', email = '—' } = {},
     designation = '—',
     gender = '—',
-    age: ageRaw,
-    dateOfJoining: dojRaw,
+    age = '—',
+    dateOfJoining,
     createdAt
   } = employee;
 
-  // determine displayed age and join date
-  const age = ageRaw != null ? ageRaw : '—';
-  const joinValue = dojRaw || createdAt;
-  const formattedJoin = joinValue ? new Date(joinValue).toLocaleDateString() : '—';
+  const joinDate = dateOfJoining || createdAt;
+  const formattedJoin = joinDate
+    ? new Date(joinDate).toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      })
+    : '—';
 
   return (
     <div className="modal-overlay" onClick={onClose}>
       <div className="employee-detail-modal" onClick={e => e.stopPropagation()}>
-        <button className="close-btn" onClick={onClose} aria-label="Close">×</button>
+        <button className="close-btn" onClick={onClose} aria-label="Close">
+          ×
+        </button>
         <div className="modal-header">
           <img src={photoUrl} alt={`${name}'s photo`} className="detail-photo" />
           <div className="detail-info">
@@ -45,7 +48,7 @@ export default function EmployeeDetailModal({ employee, onClose }) {
           </div>
           <div className="field-row">
             <span className="field-label">Gender</span>
-            <span className="field-value">{gender || '—'}</span>
+            <span className="field-value">{gender}</span>
           </div>
           <div className="field-row">
             <span className="field-label">Age</span>
@@ -58,8 +61,12 @@ export default function EmployeeDetailModal({ employee, onClose }) {
         </div>
 
         <div className="modal-footer">
-          <button className="btn btn-secondary" onClick={onClose}>Close</button>
-          <button className="btn btn-primary" onClick={() => /* navigate to report */ null}>Show Report</button>
+          <button className="btn btn-secondary" onClick={onClose}>
+            Leave Calendar
+          </button>
+          <button className="btn btn-primary" onClick={() => {/* navigate to report */}}>
+            Show Report
+          </button>
         </div>
       </div>
     </div>
