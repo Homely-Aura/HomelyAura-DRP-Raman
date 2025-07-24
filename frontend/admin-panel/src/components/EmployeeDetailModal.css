@@ -1,0 +1,126 @@
+/* src/components/EmployeeDetailModal.css */
+
+:root {
+  --primary:   #E27A4A;
+  --light-bg:  #F6FEDB;
+  --dark-text: #352208;
+  --accent:    #685634;
+  --shadow-md: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* backdrop */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* card */
+.employee-detail-modal {
+  position: relative;
+  width: 450px;
+  max-width: 90%;
+  background: var(--light-bg);
+  border-radius: 8px;
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  font-family: sans-serif;
+}
+
+/* close button */
+.close-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.75rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--dark-text);
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* header */
+.modal-header {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background: var(--primary);
+  color: #fff;
+}
+.detail-photo {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 1rem;
+  border: 2px solid var(--accent);
+}
+.header-info {
+  display: flex;
+  flex-direction: column;
+}
+.detail-name {
+  margin: 0;
+  font-size: 1.5rem;
+}
+.detail-designation {
+  margin: 0.25rem 0 0;
+  color: rgba(255,255,255,0.85);
+  font-size: 1rem;
+}
+
+/* body: two-column grid for details */
+.modal-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem 1.5rem;
+  padding: 1rem;
+}
+.field-row {
+  display: flex;
+  flex-direction: column;
+}
+.field-label {
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 0.25rem;
+}
+.field-value {
+  color: var(--dark-text);
+}
+
+/* footer buttons */
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: #fff;
+}
+.btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+.btn:hover {
+  transform: translateY(-1px);
+}
+.btn:active {
+  transform: translateY(0);
+}
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+}
+.btn-secondary {
+  background: var(--accent);
+  color: #fff;
+}

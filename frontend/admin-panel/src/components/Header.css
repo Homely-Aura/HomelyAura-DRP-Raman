@@ -1,0 +1,86 @@
+/* src/components/Header.css */
+:root {
+  --header-height: 60px;
+  --brand-orange: #E27A4A;
+  --brand-orange-hover: #C0673E;   /* ~15% darker */
+  --text-dark: #333;
+  --bg-white: #fff;
+  --shadow-light: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --hover-bg: rgba(0, 0, 0, 0.05);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--header-height);
+  padding: 0 24px;
+  background: var(--bg-white);
+  box-shadow: var(--shadow-light);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+/* Toggle button */
+.menu-icon {
+  border: none;
+  background: transparent;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.2s ease;
+}
+.menu-icon:hover {
+  background-color: var(--hover-bg);
+}
+
+/* Icon animation */
+.menu-icon svg {
+  display: block;
+  transition: transform 0.3s ease;
+}
+.menu-icon.open svg {
+  transform: rotate(90deg);
+}
+
+/* Logo */
+.logo {
+  margin-left: 12px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.username {
+  margin-right: 20px;
+  font-size: 1rem;
+  color: var(--text-dark);
+}
+
+.logout-button {
+  display: inline-flex;
+  align-items: center;
+  background: var(--brand-orange);
+  color: #fff;
+  border: none;
+  padding: 6px 16px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.logout-button svg {
+  margin-right: 8px;
+}
+.logout-button:hover {
+  background: var(--brand-orange-hover);
+}

@@ -1,0 +1,84 @@
+.assign-tasks {
+  padding: var(--space-md);
+}
+
+.assign-tasks__header {
+  font-size: 1.5rem;
+  margin-bottom: var(--space-md);
+  color: var(--color-text);
+}
+
+.assign-tasks__form {
+  display: flex;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.assign-tasks__form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.assign-tasks__form-group label {
+  margin-bottom: var(--space-sm);
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.assign-tasks__select,
+.assign-tasks__input {
+  padding: var(--space-sm);
+  border: 1px solid #ccc;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  color: var(--color-text);
+}
+
+.assign-tasks__button {
+  align-self: flex-end;
+  padding: var(--space-sm) var(--space-md);
+  background: var(--color-accent);
+  color: #ffffff;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.assign-tasks__button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.assign-tasks__tasks-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.assign-tasks__task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-sm) var(--space-md);
+  border-bottom: 1px solid #eee;
+}
+
+.assign-tasks__task-desc {
+  flex: 1;
+  color: var(--color-text);
+}
+
+.assign-tasks__task-actions button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: var(--space-sm);
+  font-size: 0.9rem;
+  color: var(--color-text);
+}
+
+.assign-tasks__task-actions button:hover {
+  color: var(--color-accent);
+}

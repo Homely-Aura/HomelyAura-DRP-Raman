@@ -1,0 +1,37 @@
+{
+  "name": "admin-panel",
+  "version": "1.0.0",
+  "private": true,
+  "proxy": "http://localhost:5000",
+  "description": "HomelyAuraDRP Admin Panel",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "@ant-design/icons": "^6.0.0",
+    "axios": "^1.5.0",
+    "date-fns": "^2.30.0",
+    "jwt-decode": "^4.0.0",
+    "lucide-react": "^0.525.0",
+    "react": "^18.2.0",
+    "react-calendar": "^6.0.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.12.1",
+    "react-scripts": "5.0.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

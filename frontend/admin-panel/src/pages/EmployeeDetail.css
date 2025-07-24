@@ -1,0 +1,52 @@
+/* EmployeeDetail.css */
+
+.employee-detail h2 {
+  margin-bottom: 16px;
+}
+
+.profile-section {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 24px;
+  background: #fff;
+  padding: 16px;
+  border-radius: 6px;
+}
+
+.profile-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-info {
+  list-style: none;
+}
+
+.profile-info li {
+  margin-bottom: 8px;
+}
+
+.reports-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.reports-table th,
+.reports-table td {
+  padding: 12px;
+  border-bottom: 1px solid #e0e0e0;
+  text-align: left;
+}
+
+.reports-table th {
+  background: #f7f7f7;
+}
+
+.reports-table tbody tr:hover {
+  background: #fafafa;
+}

@@ -1,0 +1,137 @@
+/* src/components/AttendanceCalendar.css */
+
+.calendar-container {
+  max-width: 700px;
+  width: 50%;             /* adjust as needed */
+  height: 430px;          /* fixed height */
+  margin: 3rem;      /* center + vertical spacing */
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.08);
+  padding: 1rem;
+  position: relative;   
+  margin-top: 0rem;  /* for children positioning */
+  border-top-left-radius: 0%;
+  border-top-right-radius: 0%;
+  border: 1px solid rgb(209, 207, 207);
+  margin-left: 7rem;
+}
+
+.calendar-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;     /* to contain the absolute header & grid */
+}
+
+/* Header */
+.calendar-header {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1;
+}
+
+.calendar-header button {
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: #555;
+}
+
+.calendar-header h2 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Grid */
+.calendar-grid {
+  position: absolute;
+  top: 4rem;       /* leave space for header */
+  bottom: 1rem;    /* leave bottom padding */
+  left: 1rem;
+  right: 1rem;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-auto-rows: 1fr;
+  gap: 4px;
+  background: #f5f5f5;
+  border-radius: 0 0 12px 12px;
+  padding: 0.5rem;
+}
+
+.calendar-day-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #666;
+}
+
+/* Day cells */
+.day-cell {
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #333;
+  border-radius: 6px;
+  box-shadow: inset 0 0 0 1px #e0e0e0;
+  transition: background 0.2s;
+}
+
+.day-cell.empty {
+  background: transparent;
+  box-shadow: none;
+  cursor: default;
+}
+
+/* Status colors */
+.day-cell.present {
+  background: #d4f8e8;
+  box-shadow: inset 0 0 0 1px #2ecc71;
+}
+
+.day-cell.absent {
+  background: #fde2e1;
+  box-shadow: inset 0 0 0 1px #e74c3c;
+}
+
+.day-cell.leave {
+  background: #d9e9fb;
+  box-shadow: inset 0 0 0 1px #3498db;
+}
+
+/* Half-day styling */
+.day-cell.half_first,
+.day-cell.half_second {
+  position: relative;
+  overflow: hidden;
+}
+
+.day-cell.half_first::before,
+.day-cell.half_second::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  left: 0;
+  background: #e6a52e50;
+}
+
+.day-cell.half_first::before { bottom: 0; }
+.day-cell.half_second::before { top: 0; }
+
+/* Hover effect */
+.day-cell:not(.empty):hover {
+  background: #f0f9ff;
+}

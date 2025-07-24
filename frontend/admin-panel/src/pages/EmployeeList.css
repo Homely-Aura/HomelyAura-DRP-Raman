@@ -1,0 +1,29 @@
+/* frontend/admin-panel/src/pages/EmployeeList.css */
+
+.employee-list {
+  padding: 2rem;
+  color: #374151;
+}
+
+.employee-list h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.loading {
+  text-align: center;
+  color: #6b7280;
+  margin: 2rem 0;
+}
+
+.error {
+  text-align: center;
+  color: #b91c1c;
+  margin: 2rem 0;
+}
+
+.employee-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.5rem;
+}

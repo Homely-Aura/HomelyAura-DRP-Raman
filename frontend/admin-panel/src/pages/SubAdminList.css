@@ -1,0 +1,28 @@
+/* frontend/admin-panel/src/pages/SubAdminList.css */
+
+.subadmin-list {
+  padding: 2rem;
+  color: #374151;
+}
+
+.subadmin-list h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.loading,
+.error {
+  text-align: center;
+  margin: 2rem 0;
+  font-size: 1rem;
+}
+
+.error {
+  color: #b91c1c;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}

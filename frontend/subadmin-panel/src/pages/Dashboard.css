@@ -1,0 +1,20 @@
+/* src/pages/Dashboard.css */
+/* src/pages/Dashboard.css */
+
+/* Flex wrapper for landscape cards */
+.dashboard-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;            /* space between cards */
+  padding: 16px;        /* optional outer padding */
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-left: 3rem;
+  margin-top: 3rem;
+  column-gap: 4rem;
+}
+
+/* Ensure each panel shrinks no further than its content allows */
+.dashboard-grid > * {
+  flex: 0 1 auto;
+}

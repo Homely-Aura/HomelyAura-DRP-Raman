@@ -1,0 +1,79 @@
+/* TODO: Add styles for App.css */
+/* App.css */
+
+:root {
+  --primary-bg: #f4f6f8;
+  --sidebar-width: 240px;
+  --header-height: 60px;
+  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Reset & base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--primary-bg);
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* App container */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* Header */
+.header {
+  height: var(--header-height);
+  background-color: #fff;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  z-index: 1000;
+}
+
+/* Main content area */
+.main-content {
+  display: grid;
+ grid-template-columns: var(--sidebar-width) 1fr;
+ flex: 1;
+ overflow: hidden;
+ transition: grid-template-columns 0.3s ease;
+}
+
+.main-content.collapsed {
+ /* collapse the sidebar column down to zero */
+ grid-template-columns: 0 1fr;
+}
+
+/* .main-content.collapsed {
+  margin-left: 0;
+} */
+
+/* Sidebar */
+.sidebar {
+  width: var(--sidebar-width);
+  background-color: #fff;
+  border-right: 1px solid #e0e0e0;
+  overflow-y: auto;
+}
+
+/* Page content */
+.page-content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: var(--primary-bg);
+}

@@ -1,0 +1,68 @@
+/* src/App.css */
+
+/* 1. Import the global font used in the design */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Layout dimensions */
+  --sidebar-width: 240px;
+  --header-height: 64px;
+
+  /* Spacing */
+  --space-md: 16px;
+  --space-sm: 8px;
+
+  /* Color palette */
+  --color-bg:      #F4F6F8;
+  --color-text:    #374151;
+  --color-accent:  #f97316;
+
+  /* Typography */
+  --font-family: 'Poppins', sans-serif;
+  --font-size:   14px;
+}
+
+/* 2. Reset & global defaults */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 3. Header + Sidebar + Content layout */
+.app-layout {
+  display: flex;
+  margin-top: var(--header-height);          /* content slides under header */
+  margin-left: var(--sidebar-width);         /* content slides right of sidebar */
+  transition: margin-left 0.3s ease;
+  height: calc(100vh - var(--header-height));
+}
+
+.main-content.collapsed .app-layout {
+  margin-left: 0;                             /* collapse sidebar */
+}
+
+/* 4. Scrollable page area */
+/*    NO horizontal padding, only vertical */
+.page-content {
+  flex: 1;
+  padding: var(--space-md) 0;                /* top/bottom only */
+  overflow-y: auto;
+  background-color: var(--color-bg);
+}
+.page-content {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}

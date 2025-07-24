@@ -1,0 +1,66 @@
+/* src/pages/ReportHistory.css */
+
+.report-history-container {
+  max-width: 1000px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: #FFF;
+  border-radius: 12px;
+  box-shadow: 0 16px 32px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+.report-history-container h1 {
+  margin: 0 0 1.5rem;
+  font-size: 2rem;
+  color: #333;
+  text-align: center;
+}
+
+.loading,
+.no-reports {
+  text-align: center;
+  color: #666;
+  font-style: italic;
+}
+
+.error {
+  max-width: 900px;
+  margin: 1rem auto;
+  padding: 0.75rem 1rem;
+  background: #fdecea;
+  color: #e74c3c;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  margin-top: 1rem;
+}
+
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.history-table th,
+.history-table td {
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.history-table th {
+  background-color: #474044; /* deep tone */
+  color: #FFF;
+}
+
+.history-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.history-table tr:hover {
+  background-color: rgba(71,64,68,0.05);
+}

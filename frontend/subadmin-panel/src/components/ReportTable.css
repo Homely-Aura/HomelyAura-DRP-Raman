@@ -1,0 +1,99 @@
+/* src/components/ReportTable.css */
+
+/* Theme tokens (if not already defined globally) */
+:root {
+  --rt-bg:         #ffffff;
+  --rt-header-bg:  var(--color-accent);
+  --rt-header-txt: #ffffff;
+  --rt-row-alt:    #f9fafb;
+  --rt-border:     #e5e7eb;
+  --rt-radius:     12px;
+  --rt-shadow:     0 2px 8px rgba(0,0,0,0.05);
+  --rt-gap:        0.5rem;
+  --rt-padding:    1rem;
+}
+
+/* Container that holds the table */
+.rt-wrapper {
+  width: 100%;                  /* full width of parent */
+  margin: var(--space-md) 0;    /* vertical spacing only */
+  background: var(--rt-bg);
+  border-radius: var(--rt-radius);
+  box-shadow: var(--rt-shadow);
+  overflow-x: auto;             /* scroll if too wide */
+  box-sizing: border-box;
+  padding: 0;                   /* remove horizontal padding */
+}
+
+/* Make the table fill that container */
+.report-table {
+  width: 100%;
+  min-width: 600px;             /* ensures columns don’t collapse too far */
+  border-collapse: separate;
+  border-spacing: 0;
+  table-layout: auto;
+}
+
+/* Cells */
+.report-table th,
+.report-table td {
+  padding: var(--rt-padding);
+  text-align: left;
+}
+
+/* Header row */
+.report-table thead th {
+  background: var(--rt-header-bg);
+  color: var(--rt-header-txt);
+  font-weight: 600;
+  position: sticky;
+  top: 0;                       /* keeps headers visible on scroll */
+  z-index: 1;
+}
+
+/* Rounded corners on header */
+.report-table thead th:first-child {
+  border-top-left-radius: var(--rt-radius);
+}
+.report-table thead th:last-child {
+  border-top-right-radius: var(--rt-radius);
+}
+
+/* Body rows */
+.report-table tbody tr:nth-child(even) {
+  background: var(--rt-row-alt);
+}
+.report-table tbody tr:hover {
+  background: var(--primary-light);
+}
+
+/* Bottom corners on last row */
+.report-table tbody tr:last-child td:first-child {
+  border-bottom-left-radius: var(--rt-radius);
+}
+.report-table tbody tr:last-child td:last-child {
+  border-bottom-right-radius: var(--rt-radius);
+}
+
+/* Cell borders */
+.report-table td {
+  border-bottom: 1px solid var(--rt-border);
+}
+
+/* Icon styling in headers */
+.rt-icon {
+  vertical-align: middle;
+  margin-right: var(--rt-gap);
+  font-size: 1.1rem;
+  color: inherit;
+}
+
+/* Loading/empty/error messages */
+.rt-message,
+.rt-error {
+  padding: var(--space-md);
+  text-align: center;
+}
+.rt-error {
+  color: var(--error-color);
+}

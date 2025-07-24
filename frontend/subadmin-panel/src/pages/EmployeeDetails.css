@@ -1,0 +1,23 @@
+/* src/pages/EmployeeDetails.css */
+
+.employee-details {
+  padding: 1rem;
+}
+
+.employee-details h1 {
+  margin-bottom: 0.75rem;
+}
+
+.employee-details__info p {
+  margin: 0.5rem 0;
+}
+
+.emp-loading,
+.emp-error {
+  padding: 1rem;
+  text-align: center;
+}
+
+.emp-error {
+  color: var(--error-color);
+}

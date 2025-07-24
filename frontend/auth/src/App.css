@@ -1,0 +1,10 @@
+/* App.css */
+
+/* Global background and font for the Auth app */
+body {
+  background-color: #f5f5f5;
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}

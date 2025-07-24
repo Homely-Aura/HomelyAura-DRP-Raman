@@ -1,0 +1,115 @@
+.calendar-container {
+  max-width: 800px;
+  margin: var(--space-md) auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  padding: var(--space-md);
+}
+
+.calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-md);
+}
+
+.calendar-header button {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  color: var(--color-text);
+}
+
+.calendar-month {
+  font-size: 1.25rem;
+  color: var(--color-text);
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.calendar-day-label {
+  text-align: center;
+  font-weight: 600;
+  padding: var(--space-sm);
+  color: var(--color-text);
+}
+
+.day-cell {
+  position: relative;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+
+.day-cell:hover {
+  transform: translateY(-2px);
+}
+
+/* Today highlight */
+.day-cell.today {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+/* Status backgrounds */
+.day-cell.present   { background: #d4edda; }
+.day-cell.absent    { background: #f8d7da; }
+.day-cell.half_first  {
+  background: linear-gradient(to bottom, #d4edda 50%, var(--color-bg) 50%);
+}
+.day-cell.half_second {
+  background: linear-gradient(to top, #d4edda 50%, var(--color-bg) 50%);
+}
+.day-cell.leave     { background: #d1ecf1; }
+.day-cell.leave::after {
+  content: attr(data-leavetype);
+  position: absolute;
+  bottom: 2px;
+  font-size: 0.6rem;
+  color: #0c5460;
+}
+
+/* Toolbar for marking status */
+.status-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  justify-content: center;
+  margin-top: var(--space-md);
+}
+
+.status-toolbar button,
+.status-toolbar select {
+  padding: var(--space-sm) var(--space-md);
+  border: none;
+  border-radius: 4px;
+  font-size: 0.95rem;
+}
+
+.status-toolbar button {
+  background: var(--color-accent);
+  color: #fff;
+  cursor: pointer;
+}
+
+.status-toolbar select {
+  background: #fff;
+  color: var(--color-text);
+  border: 1px solid #ccc;
+}
+
+.status-toolbar button.cancel {
+  background: #e5e7eb;
+  color: var(--color-text);
+}

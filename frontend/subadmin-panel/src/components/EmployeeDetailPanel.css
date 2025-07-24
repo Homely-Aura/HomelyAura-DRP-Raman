@@ -1,0 +1,147 @@
+/* src/components/EmployeeDetailPanel.css */
+
+/*────────────────────────────────────────────────────────────────────────────*/
+/* Globals & variables                                                      */
+/*────────────────────────────────────────────────────────────────────────────*/
+:root {
+  --card-bg:         #ffffff;
+  --card-radius:     12px;
+  --card-shadow:     0 2px 8px rgba(0,0,0,0.1);
+  --card-shadow-lg:  0 4px 16px rgba(0,0,0,0.15);
+
+  --color-text:      #2C3E50;
+  --color-muted:     #5e6768;
+  --color-accent:    #352208;
+
+  --space-xs:        4px;
+  --space-sm:        8px;
+  --space-md:        16px;
+  --space-lg:        24px;
+}
+
+/*────────────────────────────────────────────────────────────────────────────*/
+/* Make page‐content a flex‐wrap container for cards                         */
+/*────────────────────────────────────────────────────────────────────────────*/
+.page-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  align-items: flex-start;
+  justify-content: flex-start;
+  /* padding comes from your existing App.css */
+}
+
+/*────────────────────────────────────────────────────────────────────────────*/
+/* Card container (landscape)                                                */
+/*────────────────────────────────────────────────────────────────────────────*/
+.emp-detail-card {
+  display: flex;
+  align-items: center;
+  flex: 0 1 320px;               /* base width, but can shrink if needed */
+  box-sizing: border-box;        /* include padding in width */
+  padding: var(--space-md);
+  background: var(--card-bg);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  padding-right:0px;
+}
+
+.emp-detail-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--card-shadow-lg);
+}
+
+/*────────────────────────────────────────────────────────────────────────────*/
+/* Avatar                                                                     */
+/*────────────────────────────────────────────────────────────────────────────*/
+.emp-detail-card__avatar {
+  flex: 0 0 120px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #685634;
+  background: #eee;
+  margin-right: 1.5rem;
+}
+
+.emp-detail-card__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/*────────────────────────────────────────────────────────────────────────────*/
+/* Content (to the right of avatar)                                          */
+/*────────────────────────────────────────────────────────────────────────────*/
+.emp-detail-card__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;                   /* crucial for text wrapping inside flex */
+}
+
+/* Headings & text wrap                                                       */
+.emp-detail-card__name {
+  margin: 0;
+  font-size: 1.8rem;
+  color: #352208;
+  white-space: normal;
+  word-break: break-word;
+}
+
+.emp-detail-card__email {
+  margin: var(--space-xs) 0 var(--space-md);
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  white-space: normal;
+  word-break: break-word;
+}
+
+/*────────────────────────────────────────────────────────────────────────────*/
+/* Details grid                                                               */
+/*────────────────────────────────────────────────────────────────────────────*/
+.emp-detail-card__details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  column-gap: 1.8rem;
+}
+
+.emp-detail-card__detail-item {
+  display: flex;
+  align-items: flex-start;
+  min-width: 0;                   /* allow wrapping of labels/values */
+}
+
+.emp-detail-card__icon {
+  font-size: 1.3rem;
+  color: #685634;
+  margin-right: 10PX;
+  margin-top: 10px;
+}
+
+.emp-detail-card__text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.emp-detail-card__label,
+.emp-detail-card__value {
+  display: block;
+  white-space: normal;
+  word-break: break-word;
+}
+
+.emp-detail-card__label {
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+
+.emp-detail-card__value {
+  font-size: 0.95rem;
+  color: var(--color-text);
+  font-weight: 500;
+}

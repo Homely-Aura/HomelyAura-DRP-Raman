@@ -1,0 +1,64 @@
+/* frontend/admin-panel/src/components/ReportModal.css */
+
+.report-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1500;
+}
+
+.report-modal-card {
+  background: #fff;
+  width: 600px;
+  max-height: 80vh;
+  overflow-y: auto;
+  padding: 1.5rem;
+  border-radius: 8px;
+  position: relative;
+}
+
+.report-modal-card .close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.report-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.report-table th,
+.report-table td {
+  border: 1px solid #e5e7eb;
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+}
+
+.report-table th {
+  background: #f7f7f7;
+  font-weight: 600;
+}
+
+.report-table tbody tr:hover {
+  background: #fafafa;
+}
+
+.no-reports,
+.loading,
+.error {
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.error {
+  color: #b91c1c;
+}

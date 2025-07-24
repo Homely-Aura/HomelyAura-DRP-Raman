@@ -1,0 +1,61 @@
+/* frontend/admin-panel/src/components/DeassignEmployeesModal.css */
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1300;
+}
+
+.modal-card {
+  background: #fff;
+  border-radius: 6px;
+  padding: 20px;
+  width: 360px;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.modal-card .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.modal-list {
+  list-style: none;
+  margin: 16px 0;
+  padding: 0;
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+.modal-list li {
+  margin-bottom: 8px;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 10px 0;
+  border: none;
+  border-radius: 4px;
+  background: #e74c3c;
+  color: #fff;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.submit-btn:hover {
+  background: #c0392b;
+}
