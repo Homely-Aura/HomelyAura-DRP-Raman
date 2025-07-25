@@ -1,13 +1,20 @@
 /* frontend/admin-panel/src/pages/SubAdminList.css */
 
+:root {
+  --primary: #E27A4A;
+  --dark:    #352208;
+  --light:   #F6FEDB;
+}
+
 .subadmin-list {
   padding: 2rem;
-  color: #374151;
+  color: var(--dark);
 }
 
 .subadmin-list h2 {
   font-size: 2rem;
   margin-bottom: 1.5rem;
+  color: var(--dark);
 }
 
 .loading,
@@ -23,6 +30,9 @@
 
 .cards-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1.5rem;
+  /* exactly three cards per row */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem; /* further reduced spacing to fit sidebar */              /* reduced spacing between cards */
+  justify-content: start; /* left-align cards */
+  align-items: start;
 }

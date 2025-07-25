@@ -1,89 +1,146 @@
-/* frontend/admin-panel/src/components/SubAdminCard.css */
+/* src/components/SubAdminCard.css */
+:root {
+  --primary: #E27A4A;
+  --light: #F6FEDB;
+  --dark: #352208;
+}
 
 .subadmin-card {
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  padding: 1.5rem;
+  background: var(--light);
+  border-radius: 16px;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  transition: transform 0.2s, box-shadow 0.2s;
-  
+  box-shadow: 0 4px 16px rgba(53, 34, 8, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 380px;            /* wider to prevent email wrap */
+  margin: 0.75rem;         /* spacing around cards */
+}
+.subadmin-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 36px rgba(53, 34, 8, 0.2);
 }
 
-.subadmin-card:hover,
-.subadmin-card:focus-within {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+.subadmin-card__header {
+  display: flex;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background: var(--primary);
+  color: var(--light);
 }
-
+.subadmin-card__avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--light);
+  margin-right: 1rem;
+}
+.subadmin-card__info {
+  flex: 1;
+  min-width: 0;
+}
 .subadmin-card__name {
   margin: 0;
-  font-size: 2rem;
-  color: #1f2937;
+  font-size: 1.3rem;
+  font-weight: bold;
 }
-
 .subadmin-card__email {
-  margin: 0;
-  font-size: 0.95rem;
-  color: #4b5563;
-}
-
-.subadmin-card__loading,
-.subadmin-card__error {
+  margin: 0.25rem 0 0;
   font-size: 0.9rem;
-  color: #6b7280;
+  white-space: nowrap;      /* prevent wrap */
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.subadmin-card__error {
-  color: #b91c1c;
+.subadmin-card__body {
+  padding: 1rem 1.5rem;
 }
-
-.subadmin-card__assigned {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.subadmin-card__assigned-item {
-  background: #e5e7eb;
-  padding: 0.25rem 0.5rem;
-  border-radius: 4px;
-  font-size: 0.85rem;
-  color: #374151;
-}
-
-.subadmin-card__none {
+.subadmin-card__status {
   font-size: 0.9rem;
-  color: #6b7280;
+  color: var(--dark);
+  text-align: center;
+  padding: 1rem 0;
+}
+.subadmin-card__error {
+  color: var(--primary);
 }
 
-.subadmin-card__actions {
+.assigned-section {
   display: flex;
+  flex-direction: column;
+}
+.assigned-header {
+  margin: 0 0 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--dark);
+}
+.assigned-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
   gap: 0.75rem;
 }
+.assigned-card {
+  background: #fff;
+  border: 1px solid var(--primary);
+  border-radius: 12px;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: box-shadow 0.2s;
+}
+.assigned-card:hover {
+  box-shadow: 0 4px 12px rgba(53, 34, 8, 0.1);
+}
+.assigned-card__avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--primary);
+  margin-bottom: 0.5rem;
+}
+.assigned-card__name {
+  font-size: 0.85rem;
+  color: var(--dark);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
 
-.action-btn {
+.subadmin-card__footer {
+  display: flex;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  background: var(--light);
+}
+.action-text-btn {
   flex: 1;
   padding: 0.75rem 0;
-  background: #2563eb;
-  color: #fff;
+  background: var(--primary);
+  color: var(--light);
   border: none;
   border-radius: 6px;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 500;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background 0.2s, transform 0.2s;
 }
-
-.action-btn:hover:not(:disabled),
-.action-btn:focus {
-  background: #1e40af;
+.action-text-btn:hover:not(:disabled),
+.action-text-btn:focus {
+  background: rgba(226, 122, 74, 0.85);
+  transform: translateY(-2px);
   outline: none;
 }
-
-.action-btn:disabled {
-  background: #9ca3af;
+.action-text-btn:disabled {
+  background: var(--dark);
+  color: var(--light);
+  opacity: 0.6;
   cursor: not-allowed;
 }
+
+
